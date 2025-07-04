@@ -19,8 +19,8 @@ public class InventoryController {
     private InventoryService inventoryService;
 
     @PostMapping()
-    public MessageDTO createProduct(@RequestBody Inventory inventory){
-        return inventoryService.createProduct(inventory);
+    public ResponseEntity<MessageDTO> createProduct(@RequestBody Inventory inventory){
+        return new ResponseEntity<>(inventoryService.createProduct(inventory), HttpStatus.CREATED);
     }
 
     @GetMapping()
@@ -29,12 +29,12 @@ public class InventoryController {
     }
 
     @PutMapping()
-    public MessageDTO updateProduct(@RequestBody Inventory inventory) {
-        return inventoryService.updateProduct(inventory);
+    public ResponseEntity<MessageDTO> updateProduct(@RequestBody Inventory inventory) {
+        return new ResponseEntity<>(inventoryService.updateProduct(inventory), HttpStatus.OK);
     }
 
     @DeleteMapping()
-    public Object deleteProduct(@RequestParam String id) {
-        return inventoryService.deleteProduct(id);
+    public ResponseEntity<?> deleteProduct(@RequestParam String id) {
+        return new ResponseEntity<>(inventoryService.deleteProduct(id), HttpStatus.OK);
     }
 }

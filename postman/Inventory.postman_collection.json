@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "c4ffd58c-905e-4941-bfd0-03eb0ccd8276",
+		"name": "Inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3883663"
+	},
+	"item": [
+		{
+			"name": "Get All Produtcs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/inventory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/inventory?id=journal",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "journal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"item\": \"paper\",\r\n  \"qty\": 25,\r\n  \"size\": { \"h\": 14, \"w\": 21, \"uom\": \"cm\" },\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/inventory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"item\": \"journal\",\r\n  \"qty\": 25,\r\n  \"size\": { \"h\": 14, \"w\": 21, \"uom\": \"cm\" },\r\n  \"status\": \"available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/inventory",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"item\": \"paper\",\r\n  \"qty\": 25,\r\n  \"size\": { \"h\": 14, \"w\": 21, \"uom\": \"cm\" },\r\n  \"status\": \"available\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/inventory?id=journal",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "journal"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
