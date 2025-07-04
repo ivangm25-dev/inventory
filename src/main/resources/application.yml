@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: inventoryControl
+  data:
+    mongodb:
+      database: inventory_db
+      uri: mongodb+srv://test:test123456@test.wpur67o.mongodb.net/inventory_db?retryWrite=true&retryReads=true&w=majority
+
+
